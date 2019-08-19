@@ -191,5 +191,6 @@ form .submit {
     form .submit {}
     .submit:focus {
         box-shadow: 10px 10px 0 #2B0B8A;
+        border-bottom: none;
     }
 }

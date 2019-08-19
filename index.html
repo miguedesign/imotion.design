@@ -45,14 +45,27 @@
                 </div>
             </div>
             <div class="wishlist">
-                <form action="">
-                    <input type="text" name="Name" id="Name" placeholder="your fist name only" required>
-                    <input type="email" name="Email" id="Email" placeholder="your email address" required>
-                    <input type="submit" value="Let’s go!" class="submit">
+                <form
+					id="mc-embedded-subscribe-form"
+                    action="https://design.us19.list-manage.com/subscribe/post-json?u=1b35716c8c73111b2f5b9ad20&id=11020f8c73"
+					method="get"
+					name="mc-embedded-subscribe-form"
+					class="Form"
+                    novalidate>
+                    
+                    <input type="text" name="Name" id="Name" placeholder="your fist name only" required tabindex="1">
+                    <input type="email" name="Email" id="mce-EMAIL" placeholder="your email address" data-msg-required="👆Your email is important." required tabindex="2">
+                    <input type="submit" value="Let’s go!" class="submit Js_SendUpdate" id="mc-embedded-subscribe" tabindex="3">
+                    <div id="resultElement"></div>
                 </form>
             </div>
         </div>
     </main>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="./js/jquery-2.1.4.min.js"><\/script>')</script>
+<script type='text/javascript' src="assets/jquery.validate.min.js" async></script>
+<script src="assets/main.js"></script>
 
 </html>
