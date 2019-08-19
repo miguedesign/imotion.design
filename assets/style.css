@@ -126,6 +126,8 @@ form .submit {
     font-weight: 900;
     border: none;
     text-transform: uppercase;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 .submit:focus {
@@ -160,7 +162,10 @@ form .submit {
         width: 50%;
     }
     .hero .header_caption {}
-    .hero .header_title {}
+    .hero .header_title {
+        font-size: 140px;
+        line-height: 140px;
+    }
     .hero .description {
         width: 50%;
         margin-top: 0;
