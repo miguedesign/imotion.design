@@ -81,9 +81,10 @@ body {
 
 .wishlist {
     background-color: #3003B6;
-    padding: 30px 20px;
+    padding: 30px 20px 0px;
     text-align: left;
     display: block;
+    margin-bottom: 100px;
 }
 
 form {
@@ -95,7 +96,6 @@ form {
 
 form input {
     line-height: 66px;
-    width: 100%;
     font-size: 16px;
     font-weight: 400;
     background-color: transparent;
@@ -103,8 +103,13 @@ form input {
     color: white;
     border-bottom: solid 4px rgba(98, 229, 229, 0.5);
     transition: all .3s;
-    margin-bottom: 30px;
     border-radius: 0;
+    display: inline-block;
+    width: 100%;
+}
+.input{
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 input:focus {
@@ -128,10 +133,29 @@ form .submit {
     text-transform: uppercase;
     -webkit-appearance: none;
     border-radius: 0;
+    position: relative;
 }
 
 .submit:focus {
     box-shadow: 10px 10px 0 #2B0B8A;
+}
+
+.submit.is-sending{
+    background-color: black;
+}
+#resultElement{
+    width: 100%;
+    background-color: #fff;
+    color: #2B0B8A;
+    text-align: center;
+}
+#resultElement.is-success{
+    margin: 0 0 30px 0;
+    padding: 10px;
+}
+#resultElement.is-error{
+    padding: 10px;
+    background-color: red;
 }
 
 @media screen and (min-width:430px) {
@@ -139,7 +163,7 @@ form .submit {
         padding: 0;
     }
     .icons {
-        padding: 100px 110px;
+        padding: 50px 110px;
         margin: 0;
     }
     .icons ul {}
@@ -173,12 +197,15 @@ form .submit {
     .hero .description p {}
     .wishlist {
         padding: 80px 110px;
+        margin: 0;
     }
     form {}
     form input {
         line-height: 66px;
-        width: 31%;
         transition: all .3s;
+    }
+    .input{
+        width: 31%;
     }
     input:focus {
         box-shadow: none;

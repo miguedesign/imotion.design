@@ -65,29 +65,29 @@ jQuery(document).ready(function($) {
 	submit.on('click', function(e){
 		e.preventDefault();
 		
+		$texto = $(this).val();
 
-		texto = $(this).html();
-
-		$(this).html('').addClass('is-sending');
+		$(this).val('Sending...').addClass('is-sending');
 
 
 		$form.validate();
 		if ($form.valid()) {
-			console.log('valido');
 			
-			submitSubscribeForm($form, $resultElement, texto);
+			// console.log('valido' + $texto);
+				
+			submitSubscribeForm($form, $resultElement, $texto);
 
 		}
 		else{
-			console.log('no valido');
+			// console.log('no valido');
 			$('#mce-EMAIL').focus();
-			submit.removeClass('is-sending').html(texto);
+			submit.removeClass('is-sending').val($texto);
 
 		}
 		
 	});
 
-	function submitSubscribeForm($form, $resultElement, texto){
+	function submitSubscribeForm($form, $resultElement, $texto){
 		
 		$.ajax({
 			type: "GET",
@@ -102,8 +102,9 @@ jQuery(document).ready(function($) {
 			},
 			
 			success: function(data){
+				console.log(data);
 				
-				submit.removeClass('is-sending').html(texto);
+				submit.removeClass('is-sending').html($texto);
 
 				if (data.result != "success") {
 					var message = data.msg || "Sorry, it is not possible to subscribe. Please try again.";
@@ -119,7 +120,7 @@ jQuery(document).ready(function($) {
 				} else {
 					$resultElement.removeClass("is-error").addClass("is-success");
 					// lanzar el modal
-					window.location = "?r=ok";
+					// window.location = "?r=ok";
 					
 				}
 			}
@@ -128,7 +129,7 @@ jQuery(document).ready(function($) {
 
 
 	function closeModal(){
-    $('#mce-EMAIL').val('');
+    	$('#mce-EMAIL').val('');
 		form.removeClass('is-show');
 		container.removeClass('is-show');
 
