@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
 			success: function(data){
 				// console.log(data);
 				
-				submit.removeClass('is-sending').html($texto);
+				submit.removeClass('is-sending').val($texto);
 
 				if (data.result != "success") {
 					var message = data.msg || "Sorry, it is not possible to subscribe. Please try again.";
@@ -164,7 +164,9 @@ jQuery(document).ready(function($) {
 	function isSuccess(){
 		message = "<p>You are already subscribed, Thanks!</p>";
         $resultElement.removeClass("is-error").addClass("is-success").fadeIn();
-        $resultElement.html(message);
+		$resultElement.html(message);
+		$('#mce-EMAIL').val('');
+		$('#mce-FNAME').val('');
 	}
 
 	if (r == 'ok') {
