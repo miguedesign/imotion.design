@@ -11,7 +11,12 @@ body {
     -ms-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
-
+.link{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-weight: 900;
+}
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -43,7 +48,9 @@ body {
     margin: 20px;
     margin-bottom: 20px;
 }
-
+.icons ul li img{
+    width: 40px;
+}
 .hero {
     padding: 0px 0 40px;
     text-align: left;
