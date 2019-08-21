@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
 			success: function(data){
 				console.log(data);
 				
-				submit.removeClass('is-sending').val($texto);
+				submit.removeClass('is-sending').html($texto);
 
 				if (data.result != "success") {
 					var message = data.msg || "Sorry, it is not possible to subscribe. Please try again.";
@@ -118,11 +118,9 @@ jQuery(document).ready(function($) {
 					$resultElement.html(message);
 
 				} else {
+					isSuccess();
 					// lanzar el modal
 					// window.location = "?r=ok";
-					message = "<p>You are already subscribed, Thanks!</p>";
-					$resultElement.removeClass("is-error").addClass("is-success").fadeIn();
-					$resultElement.html(message);
 					
 				}
 			}
@@ -163,7 +161,14 @@ jQuery(document).ready(function($) {
 
 	var r = getParameterByName('r');
 
+	function isSuccess{
+		message = "<p>You are already subscribed, Thanks!</p>";
+        $resultElement.removeClass("is-error").addClass("is-success").fadeIn();
+        $resultElement.html(message);
+	}
+
 	if (r == 'ok') {
+
         // console.log('ok ok ok');
         message = "<p>You are already subscribed, Thanks!</p>";
         $resultElement.removeClass("is-error").addClass("is-success").fadeIn();
